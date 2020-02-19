@@ -25,7 +25,192 @@ blah, blah, blah, blah
 
    <head> 
       
-	   PUT YOUR OLD CODE IN HERE
+
+
+<script>
+        var allergy_count = 0;
+        var cold_count = 0;
+
+<!--function to keep track of the allergy answers on survey-->
+	
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+		alert("Allergy count: " + allergy_count);
+        }
+
+<!--function to keep track of the cold annswers on survey-->
+	
+        function coldAdd(){
+            cold_count = cold_count + 1;
+		alert("Cold count: " + cold_count);
+        }
+	
+<!--function to calculate the results of allergy vs cold count at end of survey-->
+	
+	function results(){
+	    var total = allergy_count + cold_count;
+		alert("Allergy Percentage: " + (allergy_count / total) * 100 +
+		      "\nCold Percentage: " + (cold_count / total) * 100);
+	}
+
+  </script>
+<!--added in alert to display allergy count and cold count-->
+<!--added in function to calculate and display results-->
+<!--var total will add allergy count and cold count to get the total-->
+<!--added an alert for percentage display to results by dividing the allergy count by total and multiplying by 
+100, then did the same for cold count so both percentages are displayed-->
+<!--added a second alert to show up on page using \n-->
+<!--closed function using }-->
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<!--the goal of this page is to explain the survey purpose and allow patients to begin the survey-->
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<!--this page includes a button that allows patients to start the survey and sends them to the first question-->	
+	
+<!--the goal of this page is to present a yes/no question to help determine if symptoms are that of a cold or allergies-->
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your eyes watery or itchy?</p>    
+		
+	<a href="#two" class="w3-btn w3-black" onclick="allergyAdd();"> Yes </a>
+		
+	<a href="#two" class="w3-btn w3-black" onclick="coldAdd();">  No </a>
+
+	<!--added in question 1 content to replace "put question 1 here"-->
+	<!--added two buttons, yes and no, to page one using commands given in guideline (under 6. App Buttons)-->
+	<!--added "onclick="allergyAdd();"" function to yes button and "onclick="coldAdd();"" function to no button
+	to record question responses-->
+    	</div>
+</div>
+<!--the goal ofthis page is to present another yes/no question to further distinguish between a cold or allergies-->
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+		
+	<a href="#three" class="w3-btn w3-black" onclick="coldAdd();"> Yes </a>
+
+	<a href="#three" class="w3-btn w3-black" onclick="allergyAdd();"> No </a>
+
+	<!--added page two by copying,  pasting, and editing code from page one, changed id to "two"--> 
+	<!--changed question number to 2-->
+	<!--added yes and no buttons by copying, pasting, and editing butttons from page one, changed href= to "#three" so buttons would link to page three-->
+	<!--added "onclick="coldAdd();"" function to yes button and "onclick="allergyAdd();"" function to no button
+	to record question responses-->
+		
+	</div>
+</div>	
+<!--the goal of this page is to present a third yes/no question to further distinguish between a cold or allergies-->	
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+		
+	<a href="#four" class="w3-btn w3-black" onclick="coldAdd();"> Yes </a>
+
+	<a href="#four" class="w3-btn w3-black" onclick="allergyAdd();"> No </a>
+
+	<!--added page three by copying, pasting, and editing code from page two, changed id to "three"-->
+	<!--changed question number to 3-->
+	<!--added yes and no buttons by copying, pasting, and editing button code from page two, changed href= to "#four" so buttons would link to page four-->
+	<!--added "onclick="coldAdd();"" function to yes button and "onclick="allergyAdd();"" function to no button
+	to record question responses-->	
+		
+	</div>
+</div>	
+<!--the goal of this page is to present the final yes/no question to help determine if symptoms are that of a cold or allergies-->	
+<div class="page" id="four">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Are your symptoms seasonal or chronic?</p>    
+		
+	<a href="#five" class="w3-btn w3-black" onclick="allergyAdd();"> Yes </a>
+		
+	<a href="#five" class="w3-btn w3-black" onclick="coldAdd();">  No </a>
+
+	<!--added page four by copying, pasting, and editing code from page three, changed id to "four"-->
+	<!--changed question number to 4-->
+	<!--added yes and no buttons by copying, pasting, and editing button code from page three, changed href= to "#five" so buttons would link to page five-->
+	<!--added "onclick="allergyAdd();"" function to yes button and "onclick="coldAdd();"" function to no button
+	to record question responses-->
+		
+    	</div>
+</div>
+<!--the goal of this page is to allow patients to view the results of their survey-->	
+<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results!</h1>
+		
+	</div> 
+	
+    	<div id="content" class="w3-container">
+	<p>Click below to view results</p> 
+
+	<a class="w3-btn w3-black" onclick="results();"> Results </a>
+	
+	<!--added page five by copying, pasting, and editing code from page four, changed id to "five"-->
+	<!--deleted yes and no buttons-->
+	<!--deleted question content and replaced with "Click below to view results"-->
+	<!--replaced header with "Results!"-->
+	<!--added in new button by copying original button code from guide (under 6. App Buttons)-->
+	<!--deleted "href="#five"" and di not replace because page five is the final page-->
+	<!--edited button to say "Results"-->
+	<!--added "onclick="results();" to button to add a function to display results upon clicking-->
+		
+    	</div>
+</div>
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
 	   
    </body>
 </html>
