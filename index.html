@@ -28,24 +28,27 @@ blah, blah, blah, blah
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var appendicitis_count = 0;
+        var gas_count = 0;
 	var docMod = document.lastModified;
 	alert("This file last modified  " + docMod);
 	console.log("This file last modified  " + docMod);
 <!--this added alert will notify the person who clicked the link of when the link was last modified-->
-<!--function to keep track of the allergy answers on survey-->
+	<!--changed variables to appendicitis and gas for new survey-->
+<!--function to keep track of the appendicitis answers on survey-->
+		<!--edited function variable for new survey-->
 	
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		alert("Allergy count: " + allergy_count);
+        function appendicitisAdd(){
+            appendicitis_count = appendicitis_count + 1;
+		alert("Appendicitis count: " + appendicitis_count);
         }
 
-<!--function to keep track of the cold annswers on survey-->
+<!--function to keep track of the gas annswers on survey-->
+			<!--edited function variable for new survey-->
 	
-        function coldAdd(){
-            cold_count = cold_count + 1;
-		alert("Cold count: " + cold_count);
+        function gasAdd(){
+            gas_count = gas_count + 1;
+		alert("Gas count: " + gas_count);
         }
 	
 <!--function to calculate the results of allergy vs cold count at end of survey-->
@@ -116,7 +119,7 @@ img {
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p>    
+        <p>Is your pain isolated to your lower, right abdomen?</p>    
 		
 	<a href="#two" class="w3-btn w3-black" onclick="allergyAdd();"> Yes </a>
 		
@@ -126,6 +129,7 @@ img {
 	<!--added two buttons, yes and no, to page one using commands given in guideline (under 6. App Buttons)-->
 	<!--added "onclick="allergyAdd();"" function to yes button and "onclick="coldAdd();"" function to no button
 	to record question responses-->
+	<!--edited question content for new survey topic-->
     	</div>
 </div>
 <!--the goal ofthis page is to present another yes/no question to further distinguish between a cold or allergies-->
