@@ -39,12 +39,11 @@ Known Issues:
 	var docMod = document.lastModified;
 	alert("This file last modified  " + docMod);
 	console.log("This file last modified  " + docMod);
-	var resultText = document.getElementById("results");
 <!--this added alert will notify the person who clicked the link of when the link was last modified-->
 	<!--changed variables to appendicitis and gas for new survey-->
 <!--function to keep track of the appendicitis answers on survey-->
 		<!--edited function variable for new survey-->
-			<!--added function to present results on page-->
+
 	
         function appendicitisAdd(){
             appendicitis_count = appendicitis_count + 1;
@@ -61,10 +60,11 @@ Known Issues:
 	
 <!--function to calculate the results of allergy vs cold count at end of survey-->
 	
-	function results(){
-	    var total = appendicitis_count + gas_count;
-		alert("Appendicitis Percentage: " + (appendicitis_count / total) * 100 +
-		      "\nGas Percentage: " + (gas_count / total) * 100);
+	function setResults(){
+	    var resultText = document.getElementById("results");
+		var appendicitisPercent = appendicitis_count / 4 * 100;
+			var gasPercent = gas_count / 4 * 100;
+				resultText.innerHTML = "Probability that it is appendicitis = " + appendicitisPercent + "%<br> Probability that it is gas = " + gasPercent + "%;
 	}
 
   </script>
@@ -77,6 +77,7 @@ Known Issues:
 <!--closed function using }-->
 	   <!--edited variables and functions to appendicitis/gas for new survey-->
 	   <!--edited results function for new variables-->
+		<!--edited results function to have results appear on page rather than in alert box-->
 
 
 <style>	
