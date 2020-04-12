@@ -232,7 +232,7 @@ img {
 		
 	</div>
 </div>	
-<!--the goal of this page is to present the final yes/no question to help determine if symptoms are that of appendicitis or gas-->	
+<!--the goal of this page is to present the final yes/no question to help further distinguish between illnesses-->	
 <div class="page" id="four">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
@@ -241,9 +241,9 @@ img {
     	<div id="content" class="w3-container">
         <p>Have you been sneezing?</p>    
 		
-	<a href="#result" class="w3-btn w3-black" onclick="coldandallergiesAdd();"> Yes </a>
+	<a href="#five" class="w3-btn w3-black" onclick="coldandallergiesAdd();"> Yes </a>
 		
-	<a href="#result" class="w3-btn w3-black" onclick="covidandfluAdd();">  No </a>
+	<a href="#five" class="w3-btn w3-black" onclick="covidandfluAdd();">  No </a>
 
 	<!--added page four by copying, pasting, and editing code from page three, changed id to "four"-->
 	<!--changed question number to 4-->
@@ -254,6 +254,30 @@ img {
 		<!--edited button onclick for new variables-->
 			<!--edited button href-->
 				<!--edited question for sneezing and edited onclicks to match illnesses-->
+				<!--edited the buttons to launch to page with id #five-->	
+		
+	</div>
+</div>	
+<!--the goal of this page is to present the final yes/no question to help further distinguish between illnesses-->	
+<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a runny and/or stuffy nose?</p>    
+		
+	<a href="#six" class="w3-btn w3-black" onclick="coldandallergiesAdd();"> Yes </a>
+		
+		<a href="#six" class="w3-btn w3-black" onclick="fluAdd();"> Sometimes </a>
+		
+	<a href="#six" class="w3-btn w3-black" onclick="covidAdd();">  No </a>
+
+	<!--added page four by copying, pasting, and editing code from page three, changed id to "five"-->
+	<!--changed question number to 4-->
+		<!--edited question content for runny nose-->
+		<!--edited buttons and added button for answers to question 5-->
+		<!--edited buttons to launch to page 6 upon clicking-->
 		
     	</div>
 </div>
