@@ -66,9 +66,11 @@ Known Issues:
 	
 	function setResults(){
 	    var resultText = document.getElementById("results");
-		var appendicitisPercent = appendicitis_count / 4 * 100;
-			var gasPercent = gas_count / 4 * 100;
-				resultText.innerHTML = "Probability that it is appendicitis = " + appendicitisPercent + "%<br> Probability that it is gas = " + gasPercent + "%";
+		var coldPercent = cold_count / 4 * 100;
+			var fluPercent = flu_count / 4 * 100;
+				var allergiesPercent = allergies_count / 4 * 100;
+					var covidPercent = covid_count / 4 * 100;
+				resultText.innerHTML = "Probability that it is a cold = " + coldPercent + "%<br> Probability that it is the flu = " + fluPercent + "%";
 	}
 
   </script>
@@ -87,7 +89,7 @@ Known Issues:
 		<!--added quotation marks to fix results function-->
 			<!--edited and added to the orginal vars to match diseases being looked at in this questionnaire-->
 			<!--edited and added to the orginal functions to match diseases being looked at in this questionnaire-->
-	
+			<!--edited the results function somewhat to match new vars, but will most likely be removed to make a new result display later-->	
 <style>	
 .body {
      margin: 0em;
