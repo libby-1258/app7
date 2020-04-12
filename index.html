@@ -90,6 +90,13 @@ Known Issues:
 			
         }
 	
+		function covidcoldallergiesAdd(){ //added function to account for multiple illnesses
+        		covid_count = covid_count + 1; 
+			cold_count = cold_count + 1;
+			allergies_count = allergies_count + 1;
+			
+        }
+	
 	function setResults(){
 	    var resultText = document.getElementById("results");
 		var coldPercent = cold_count / 4 * 100;
@@ -300,6 +307,52 @@ Known Issues:
 		<!--edited question content for sore throat-->
 		<!--edited buttons and added button for answers to question 6-->
 		<!--edited buttons to launch to page 7 upon clicking-->
+		
+    	</div>
+</div>
+
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
+<div class="page" id="seven">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 7</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a fever?</p>    
+		
+	<a href="#eight" class="w3-btn w3-black" onclick="covidandfluAdd();"> Yes </a>
+		
+	<a href="#eight" class="w3-btn w3-black" onclick="coldAdd();"> I had one for a short time </a>
+		
+		<a href="#eight" class="w3-btn w3-black" onclick="allergiesAdd();"> No </a>
+
+	<!--added page seven by copying, pasting, and editing code from page three, changed id to "seven"-->
+	<!--changed question number to 7-->
+		<!--edited question content for fever-->
+		<!--edited buttons and added button for answers to question 7-->
+		<!--edited buttons to launch to page 8 upon clicking-->
+
+    	</div>
+</div>
+
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
+<div class="page" id="eight">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 8</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you feel tired and/or weak?</p>    
+		
+	<a href="#nine" class="w3-btn w3-black" onclick="fluAdd();"> Yes </a>
+		
+	<a href="#nine" class="w3-btn w3-black" onclick="covidcoldallergiesAdd();"> Somewhat </a>
+
+	<!--added page eight by copying, pasting, and editing code from page three, changed id to "eight"-->
+	<!--changed question number to 8-->
+		<!--edited question content for tiredness-->
+		<!--edited buttons and added button for answers to question 8-->
+		<!--edited buttons to launch to page 9 upon clicking-->
 		
     	</div>
 </div>
