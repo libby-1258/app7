@@ -34,24 +34,35 @@ Known Issues:
 
 
 <script>
-        var appendicitis_count = 0;
-        var gas_count = 0;
+        var cold_count = 0; //edited var to count cold symptoms
+        var flu_count = 0; //edited var to count flu symptoms
+	var allergies_count = 0; //added var to count allergy symptoms
+	var covid_count = 0; //added var to count covid-19 symptoms
 	var docMod = document.lastModified;
 	alert("This file last modified  " + docMod);
 	console.log("This file last modified  " + docMod);
 
 	
-        function appendicitisAdd(){
-            appendicitis_count = appendicitis_count + 1;
+        function coldAdd(){
+            cold_count = cold_count + 1; //edited function to add to the cold count when a cold symptom is selected
 	
         }
 
 	
-        function gasAdd(){
-            gas_count = gas_count + 1;
+        function fluAdd(){
+            flu_count = flu_count + 1; //edited function to add to the flu count when a flu symptom is selected
+	
+        }
+	
+		function allergiesAdd(){
+        		allergies_count = flu_count + 1; //edited function to add to the allergies count when an allergy symptom is selected
 	
         }
 
+		function covidAdd(){
+  	     		covid_count = covid_count + 1; //edited function to add to the covid count when a covid symptom is selected
+	
+        }
 	
 	function setResults(){
 	    var resultText = document.getElementById("results");
@@ -74,8 +85,9 @@ Known Issues:
 		<!--edited results function to have results appear on page rather than in alert box-->
 		<!--deleted my appendicitis and gas count alerts-->
 		<!--added quotation marks to fix results function-->
-		
-
+			<!--edited and added to the orginal vars to match diseases being looked at in this questionnaire-->
+			<!--edited and added to the orginal functions to match diseases being looked at in this questionnaire-->
+	
 <style>	
 .body {
      margin: 0em;
