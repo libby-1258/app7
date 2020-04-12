@@ -55,14 +55,22 @@ Known Issues:
         }
 	
 		function allergiesAdd(){
-        		allergies_count = flu_count + 1; //edited function to add to the allergies count when an allergy symptom is selected
+        		allergies_count = allergies_count + 1; //edited function to add to the allergies count when an allergy symptom is selected
 	
         }
 
 		function covidAdd(){
-  	     		covid_count = covid_count + 1; //edited function to add to the covid count when a covid symptom is selected
+        		covid_count = covid_count + 1; //edited function to add to the covid count when a covid symptom is selected
 	
         }
+	
+		function covidandfluAdd(){ //added function to account for multiple illnesses
+        		covid_count = covid_count + 1; 
+			flu_count = flu_count + 1;
+			
+        }
+	
+	
 	
 	function setResults(){
 	    var resultText = document.getElementById("results");
@@ -126,28 +134,31 @@ img {
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have appendicitis but wonder if it's just some bad gas pain? Answer a few short questions to find out!</p>
+	<p>Are you feeling like you might have COVID-19 but wonder if it's just a common cold, flu, or allergies? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-	<img src="https://ae01.alicdn.com/kf/H4acc9df8b9ab43238c890cffb81bd9f1w/Deluxe-Dual-Head-Medical-Stethoscope-Doctor-Cardiology-Stethoscope-Professional-Doctor-Stethoscope-Medical-Devices-for-Nurse-Vet.jpg" alt="Stethoscope" width="400" height="400"><!--this page includes a button that allows patients to start the survey and sends them to the first question-->	
-<!--added an image of a stethoscope to the cover page as well as height and width dimensions-->
+
 	<!--edited cover page for new survey-->
-<!--the goal of this page is to present a yes/no question to help determine if symptoms are that of a appendicitis or gas-->
+<!--the goal of this page is to present a yes/no question to help determine which illness symptoms align with->
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Is your pain isolated to your lower, right abdomen?</p>    
+        <p>What is the length of your symptoms?</p>    
 		
-	<a href="#two" class="w3-btn w3-black" onclick="appendicitisAdd();"> Yes </a>
+	<a href="#two" class="w3-btn w3-black" onclick="covidAdd();"> 7-25 days </a>
 		
-	<a href="#two" class="w3-btn w3-black" onclick="gasAdd();">  No </a>
+	<a href="#two" class="w3-btn w3-black" onclick="coldAdd();"> Less than 14 days </a>
+	
+		<a href="#two" class="w3-btn w3-black" onclick="fluAdd();"> 7-14 days </a>
+
+		<a href="#two" class="w3-btn w3-black" onclick="allergiesAdd();"> Several weeks </a>
 
 	<!--added in question 1 content to replace "put question 1 here"-->
 	<!--added two buttons, yes and no, to page one using commands given in guideline (under 6. App Buttons)-->
@@ -155,20 +166,24 @@ img {
 	to record question responses-->
 		<!--edited question content for new survey topic-->
 		<!--edited button onclick for new variables-->
+			<!--edited question to ask about duration of symptoms-->
+			<!--added buttons and edited onclick to match answer to illness-->
     	</div>
 </div>
-<!--the goal ofthis page is to present another yes/no question to further distinguish between appendicitis or gas-->
+<!--the goal ofthis page is to present another yes/no question to further distinguish between illnesses-->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
+		<p>Do you have a cough & what is it like?</p>
 		
-	<a href="#three" class="w3-btn w3-black" onclick="appendicitisAdd();"> Yes </a>
+	<a href="#three" class="w3-btn w3-black" onclick="covidandfluAdd();"> Yes, a dry cough </a>
 
-	<a href="#three" class="w3-btn w3-black" onclick="gasAdd();"> No </a>
+	<a href="#three" class="w3-btn w3-black" onclick="coldAdd();"> Yes, it's mild </a>
+		
+	<a href="#three" class="w3-btn w3-black" onclick="allergiesAdd();"> No, I have not been coughing much </a>
 
 	<!--added page two by copying,  pasting, and editing code from page one, changed id to "two"--> 
 	<!--changed question number to 2-->
@@ -176,6 +191,7 @@ img {
 	<!--added "onclick="coldAdd();"" function to yes button and "onclick="allergyAdd();"" function to no button
 	to record question responses-->
 		<!--question remained the same, edited  button onclick for new variables-->
+			<!--edited question for cough and edited button responses and onclick to match illnesses-->
 		
 	</div>
 </div>	
