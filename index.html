@@ -97,6 +97,18 @@ Known Issues:
 			
         }
 	
+		function covidandallergiesAdd(){ //added function to account for multiple illnesses
+        		covid_count = covid_count + 1; 
+			allergies_count = allergies_count + 1;
+			
+        }
+	
+		function coldandfluAdd(){ //added function to account for multiple illnesses
+        		cold_count = cold_count + 1; 
+			flu_count = flu_count + 1;
+			
+        }
+	
 	function setResults(){
 	    var resultText = document.getElementById("results");
 		var coldPercent = cold_count / 4 * 100;
@@ -353,6 +365,78 @@ Known Issues:
 		<!--edited question content for tiredness-->
 		<!--edited buttons and added button for answers to question 8-->
 		<!--edited buttons to launch to page 9 upon clicking-->
+		
+    	</div>
+</div>
+	
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
+<div class="page" id="nine">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 9</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a headache?</p>    
+		
+	<a href="#ten" class="w3-btn w3-black" onclick="fluAdd();"> Yes </a>
+		
+	<a href="#ten" class="w3-btn w3-black" onclick="covidandallergiesAdd();"> Somewhat </a>
+		
+	<a href="#ten" class="w3-btn w3-black" onclick="coldAdd();"> No </a>	
+
+	<!--added page nine by copying, pasting, and editing code from page three, changed id to "nine"-->
+	<!--changed question number to 9-->
+		<!--edited question content for headache-->
+		<!--edited buttons and added button for answers to question 9-->
+		<!--edited buttons to launch to page 10 upon clicking-->
+		
+    	</div>
+</div>
+	
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
+<div class="page" id="ten">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 10</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have body aches and pain?</p>    
+		
+	<a href="#eleven" class="w3-btn w3-black" onclick="coldandfluAdd();"> Yes </a>
+		
+	<a href="#eleven" class="w3-btn w3-black" onclick="covidAdd();"> Somewhat </a>
+		
+	<a href="#eleven" class="w3-btn w3-black" onclick="allergiesAdd();"> No </a>	
+
+	<!--added page ten by copying, pasting, and editing code from page three, changed id to "ten"-->
+	<!--changed question number to 10-->
+		<!--edited question content for body aches-->
+		<!--edited buttons and added button for answers to question 10-->
+		<!--edited buttons to launch to page 11 upon clicking-->
+		
+    	</div>
+</div>
+	
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
+<div class="page" id="eleven">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 11</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have diarrhea?</p>    
+		
+	<a href="#results" class="w3-btn w3-black" onclick="covidAdd();"> Somewhat </a>
+		
+	<a href="#results" class="w3-btn w3-black" onclick="fluAdd();"> Somewhat (and I am under the age of 18) </a>
+		
+	<a href="#results" class="w3-btn w3-black" onclick="coldandallergiesAdd();"> No </a>	
+
+	<!--added page eleven by copying, pasting, and editing code from page three, changed id to "eleven"-->
+	<!--changed question number to 11-->
+		<!--edited question content for headache-->
+		<!--edited buttons and added button for answers to question 11-->
+		<!--edited buttons to launch to results page upon clicking-->
 		
     	</div>
 </div>
