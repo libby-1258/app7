@@ -70,7 +70,12 @@ Known Issues:
 			
         }
 	
-	
+		function coldfluallergiesAdd(){ //added function to account for multiple illnesses
+        		cold_count = cold_count + 1; 
+			flu_count = flu_count + 1;
+			allergies_count = allergies_count + 1;
+			
+        }
 	
 	function setResults(){
 	    var resultText = document.getElementById("results");
@@ -97,7 +102,9 @@ Known Issues:
 		<!--added quotation marks to fix results function-->
 			<!--edited and added to the orginal vars to match diseases being looked at in this questionnaire-->
 			<!--edited and added to the orginal functions to match diseases being looked at in this questionnaire-->
-			<!--edited the results function somewhat to match new vars, but will most likely be removed to make a new result display later-->	
+			<!--edited the results function somewhat to match new vars, but will most likely be removed to make a new result display later-->
+				<!--added functions for multiple illnesses-->
+	
 <style>	
 .body {
      margin: 0em;
@@ -195,18 +202,18 @@ img {
 		
 	</div>
 </div>	
-<!--the goal of this page is to present a third yes/no question to further distinguish between appendicitis or gas-->	
+<!--the goal of this page is to present a third yes/no question to further distinguish between illnesses-->	
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Did the pain last a few hours or less?</p>
+		<p>Have you experienced shortness of breath?</p>
 		
-	<a href="#four" class="w3-btn w3-black" onclick="gasAdd();"> Yes </a>
+	<a href="#four" class="w3-btn w3-black" onclick="covidAdd();"> Yes </a>
 
-	<a href="#four" class="w3-btn w3-black" onclick="appendicitisAdd();"> No </a>
+	<a href="#four" class="w3-btn w3-black" onclick="coldfluallergiesAdd();"> No </a>
 
 	<!--added page three by copying, pasting, and editing code from page two, changed id to "three"-->
 	<!--changed question number to 3-->
@@ -215,6 +222,7 @@ img {
 	to record question responses-->	
 		<!--edited question content for new survey-->
 		<!--edited button onclick for new variables-->
+			<!--edited button onclicks and question for shortness of breath-->
 		
 	</div>
 </div>	
