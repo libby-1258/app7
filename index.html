@@ -77,6 +77,12 @@ Known Issues:
 			
         }
 	
+		function coldandallergiesAdd(){ //added function to account for multiple illnesses
+        		cold_count = cold_count + 1; 
+			allergies_count = allergies_count + 1;
+			
+        }
+	
 	function setResults(){
 	    var resultText = document.getElementById("results");
 		var coldPercent = cold_count / 4 * 100;
@@ -233,11 +239,11 @@ img {
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Have you been experiencing flatulence?</p>    
+        <p>Have you been sneezing?</p>    
 		
-	<a href="#result" class="w3-btn w3-black" onclick="gasAdd();"> Yes </a>
+	<a href="#result" class="w3-btn w3-black" onclick="coldandallergiesAdd();"> Yes </a>
 		
-	<a href="#result" class="w3-btn w3-black" onclick="appendicitisAdd();">  No </a>
+	<a href="#result" class="w3-btn w3-black" onclick="covidandfluAdd();">  No </a>
 
 	<!--added page four by copying, pasting, and editing code from page three, changed id to "four"-->
 	<!--changed question number to 4-->
@@ -247,6 +253,7 @@ img {
 		<!--edited question content for new survey-->
 		<!--edited button onclick for new variables-->
 			<!--edited button href-->
+				<!--edited question for sneezing and edited onclicks to match illnesses-->
 		
     	</div>
 </div>
