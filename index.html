@@ -83,6 +83,13 @@ Known Issues:
 			
         }
 	
+		function covidfluallergiesAdd(){ //added function to account for multiple illnesses
+        		covid_count = covid_count + 1; 
+			flu_count = flu_count + 1;
+			allergies_count = allergies_count + 1;
+			
+        }
+	
 	function setResults(){
 	    var resultText = document.getElementById("results");
 		var coldPercent = cold_count / 4 * 100;
@@ -130,14 +137,7 @@ Known Issues:
     left: 0vw;
     z-index: 1;
 }
-img {
-	width:35%;
-	height:35%;
-	object-fit: contain;
-}
-<!--added a style function for the image so that it will resize to only 50% of any browser-->
-	<!--edited the resize image to 40%-->
-	<!--edited the resize image to 35%-->
+
 </style>
 
 <body>
@@ -156,7 +156,7 @@ img {
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 	<!--edited cover page for new survey-->
-<!--the goal of this page is to present a yes/no question to help determine which illness symptoms align with-->
+<!--the goal of this page is to present a question to help determine which illness symptoms align with-->
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
@@ -183,7 +183,7 @@ img {
 			<!--added buttons and edited onclick to match answer to illness-->
     	</div>
 </div>
-<!--the goal ofthis page is to present another yes/no question to further distinguish between illnesses-->
+<!--the goal ofthis page is to present another question to further distinguish between illnesses-->
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
@@ -208,7 +208,7 @@ img {
 		
 	</div>
 </div>	
-<!--the goal of this page is to present a third yes/no question to further distinguish between illnesses-->	
+<!--the goal of this page is to present another question to further distinguish between illnesses-->	
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
@@ -232,7 +232,7 @@ img {
 		
 	</div>
 </div>	
-<!--the goal of this page is to present the final yes/no question to help further distinguish between illnesses-->	
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
 <div class="page" id="four">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
@@ -258,7 +258,7 @@ img {
 		
 	</div>
 </div>	
-<!--the goal of this page is to present the final yes/no question to help further distinguish between illnesses-->	
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
 <div class="page" id="five">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
@@ -273,14 +273,37 @@ img {
 		
 	<a href="#six" class="w3-btn w3-black" onclick="covidAdd();">  No </a>
 
-	<!--added page four by copying, pasting, and editing code from page three, changed id to "five"-->
-	<!--changed question number to 4-->
+	<!--added page five by copying, pasting, and editing code from page three, changed id to "five"-->
+	<!--changed question number to 5-->
 		<!--edited question content for runny nose-->
 		<!--edited buttons and added button for answers to question 5-->
 		<!--edited buttons to launch to page 6 upon clicking-->
 		
     	</div>
 </div>
+	
+<!--the goal of this page is to present another question to help further distinguish between illnesses-->	
+<div class="page" id="six">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have a sore throat?</p>    
+		
+	<a href="#seven" class="w3-btn w3-black" onclick="coldAdd();"> Yes </a>
+		
+		<a href="#seven" class="w3-btn w3-black" onclick="covidfluallergiesAdd();"> Somewhat </a>
+
+	<!--added page six by copying, pasting, and editing code from page three, changed id to "six"-->
+	<!--changed question number to 6-->
+		<!--edited question content for sore throat-->
+		<!--edited buttons and added button for answers to question 6-->
+		<!--edited buttons to launch to page 7 upon clicking-->
+		
+    	</div>
+</div>
+	
 <!--the goal of this page is to allow patients to view the results of their survey-->	
 <div class="page" id="result">
 	<div id="header" class="w3-container w3-flat-carrot">
